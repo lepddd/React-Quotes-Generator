@@ -21,8 +21,8 @@ const StyledQuotes = styled.div`
 
 const QuotesBox = ({ quote, children }) => {
   return (
-    <StyledQuotes>      
-      {quote}      
+    <StyledQuotes>
+      {quote}
       {children}
     </StyledQuotes>
   );
