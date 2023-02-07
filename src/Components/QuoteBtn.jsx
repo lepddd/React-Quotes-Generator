@@ -12,10 +12,17 @@ const StyledBtn = styled.button`
   color: #3a86ff;
 `;
 
-const QuoteBtn = ({ title, fetchData,disabled }) => {
+const QuoteBtn = ({ state, fetchData }) => {
+  const { loading } = state;
+
   return (
-    <StyledBtn as={motion.button} whileHover={{ x:[0,5,-5,0]}} onClick={fetchData} disabled={disabled}>
-      {title}
+    <StyledBtn
+      as={motion.button}
+      whileHover={{ x: [0, 5, -5, 0] }}
+      onClick={fetchData}
+      disabled={loading}
+    >
+      {loading ? "WAIT..." : "GIVE ME ADVICE!"}
     </StyledBtn>
   );
 };
